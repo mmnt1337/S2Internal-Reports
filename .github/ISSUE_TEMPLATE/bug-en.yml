@@ -1,0 +1,49 @@
+name: English — report a problem
+description: Crash, freeze, low FPS, or a feature that does not work.
+labels:
+- bug
+- needs-triage
+body:
+- type: markdown
+  attributes:
+    value: 'Describe the problem and attach logs from when it happened.
+
+      [How to find logs](https://github.com/mmnt1337/S2Internal-Reports/blob/main/README.md#how-to-attach-logs).
+
+      '
+- type: textarea
+  id: problem
+  attributes:
+    label: What happened?
+    description: What did you do, what went wrong, and what did you expect?
+    placeholder: I enabled ESP and the minimap. After a few minutes, ESP markers stopped updating. Turning ESP off
+      and on did not help.
+  validations:
+    required: true
+- type: input
+  id: versions
+  attributes:
+    label: Mod version
+    description: Enter the version, the name of the archive you downloaded, or a download link.
+    placeholder: Version / archive name / download link
+  validations:
+    required: false
+- type: textarea
+  id: context
+  attributes:
+    label: Details
+    description: Launcher or ReShade? Which features were enabled? How often does it happen? Other mods or overlays?
+      For low FPS, include FPS before/after and your graphics card. Attach screenshots here.
+    placeholder: I use the launcher. ESP and the minimap were enabled. It happens after several minutes.
+  validations:
+    required: false
+- type: upload
+  id: attachments
+  attributes:
+    label: Logs
+    description: Attach s2internal.log; for a crash or freeze, also attach crash_metrics logs from that time. If
+      the launcher fails to start the mod, attach launcher.log. Drag files here or click to select them. You can
+      attach a ZIP. Check files for personal information.
+  validations:
+    required: true
+    accept: .log,.txt,.zip
